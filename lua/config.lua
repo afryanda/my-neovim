@@ -21,9 +21,6 @@ set.smartcase = true
 set.hlsearch = true
 set.incsearch = true
 
--- vim.g.nord_disable_background = true
--- vim.g.nord_enable_sidebar_background = true
--- vim.g.nord_contrast = true
--- vim.g.nord_borders = true
--- require'nord'.set()
-require('pywal').setup()
+set.termguicolors = true
+
+vim.g.dashboard_default_executive = 'telescope'

@@ -9,26 +9,28 @@ require 'nvim-treesitter.configs'.setup {
     },
     autotag = {
         enable = true,
+    },
+    context_commentstring = {
+        enable = true
     }
+}
+
+require('feline').setup({
+    components = require('catppuccin.core.integrations.feline'),
+})
+
+require('gitsigns').setup {
+    current_line_blame = true,
+}
+
+require('indent_blankline').setup {
+    show_current_context = true,
+    filetype_exclude = { 'dashboard' }
 }
 
 require 'nvim-tree'.setup {}
 
-require('lualine').setup {
-    options = {
-        theme = 'pywal-nvim',
-    }
-}
-
-require('transparent').setup({
-    enable = true,
-    extra_groups = {
-        "BufferLineTabClose",
-        "BufferlineBufferSelected",
-        "BufferLineFill",
-        "BufferLineBackground",
-        "BufferLineSeparator",
-        "BufferLineIndicatorSelected",
-    },
-    exclude = {}, -- table: groups you don't want to clear
-})
+-- vimtex
+vim.cmd [[
+let g:vimtex_view_method = 'zathura'
+]]
